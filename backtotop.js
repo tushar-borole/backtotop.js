@@ -1,66 +1,64 @@
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
-;( function( $, window, document, undefined ) {
+;
+(function ($, window, document, undefined) {
 
-	"use strict";
+    "use strict";
 
-		// undefined is used here as the undefined global variable in ECMAScript 3 is
-		// mutable (ie. it can be changed by someone else). undefined isn't really being
-		// passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-		// can no longer be modified.
 
-		// window and document are passed through as local variables rather than global
-		// as this (slightly) quickens the resolution process and can be more efficiently
-		// minified (especially when both are regularly referenced in your plugin).
+    var pluginName = "backtotop",
+        defaults = {
+            offset: 300,
+            offsetopacity:1200,
+            scrollduration:700
+        };
 
-		// Create the defaults once
-		var pluginName = "backtotop",
-			defaults = {
-				propertyName: "value"
-			};
+    // The actual plugin constructor
+    function Plugin(element, options) {
+        this.element = element;
+        this.settings = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
 
-		// The actual plugin constructor
-		function Plugin ( element, options ) {
-			this.element = element;
+    $.extend(Plugin.prototype, {
+        init: function () {
+/*alert('inn');*/
+            var offset = this.settings.offset,
+                //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+                offset_opacity = this.settings.offsetopacity,
+                //duration of the top scrolling animation (in ms)
+                scroll_top_duration = this.settings.scrollduration,
+                //grab the "back to top" link
+                $back_to_top = $(this.element);
 
-			// jQuery has an extend method which merges the contents of two or
-			// more objects, storing the result in the first object. The first object
-			// is generally empty as we don't want to alter the default options for
-			// future instances of the plugin
-			this.settings = $.extend( {}, defaults, options );
-			this._defaults = defaults;
-			this._name = pluginName;
-			this.init();
-		}
+            //hide or show the "back to top" link
+            $(window).scroll(function () {
+                ($(this).scrollTop() > offset) ? $back_to_top.addClass('cd-is-visible'): $back_to_top.removeClass('cd-is-visible cd-fade-out');
+                if ($(this).scrollTop() > offset_opacity) {
+                    $back_to_top.addClass('cd-fade-out');
+                }
+            });
 
-		// Avoid Plugin.prototype conflicts
-		$.extend( Plugin.prototype, {
-			init: function() {
+            //smooth scroll to top
+            $back_to_top.on('click', function (event) {
+                event.preventDefault();
+                $('body,html').animate({
+                    scrollTop: 0,
+                }, scroll_top_duration);
+            });
+        }
+    });
 
-				// Place initialization logic here
-				// You already have access to the DOM element and
-				// the options via the instance, e.g. this.element
-				// and this.settings
-				// you can add more functions like the one below and
-				// call them like the example below
-				this.yourOtherFunction( "jQuery Boilerplate" );
-			},
-			yourOtherFunction: function( text ) {
 
-				// some logic
-				$( this.element ).text( text );
-			}
-		} );
+    $.fn[pluginName] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" +
+                    pluginName, new Plugin(this, options));
+            }
+        });
+    };
 
-		// A really lightweight plugin wrapper around the constructor,
-		// preventing against multiple instantiations
-		$.fn[ pluginName ] = function( options ) {
-			return this.each( function() {
-				if ( !$.data( this, "plugin_" + pluginName ) ) {
-					$.data( this, "plugin_" +
-						pluginName, new Plugin( this, options ) );
-				}
-			} );
-		};
-
-} )( jQuery, window, document );
+})(jQuery, window, document);
