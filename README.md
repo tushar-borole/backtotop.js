@@ -7,13 +7,13 @@ create a quick back to top page button, so that when user scrool down , he can q
 Install via bower
 
 ```sh
-bower install backtotop
+bower install backtotop.js
 ```
 
 Install via npm
 
 ```sh
-npm install backtotop
+npm install backtotop.js
 ```
 
 Add javascript and html code
