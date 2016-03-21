@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Backtotop.js by tushariscoolster</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Backtotop.js</h1>
+        <h2></h2>
+        <a href="https://github.com/tushariscoolster/backtotop.js" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="backtotopjs" class="anchor" href="#backtotopjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>backtotop.js</h1>
+
+<p>create a quick back to top page button, so that when user scrool down , he can quickly move to the top with a single click :)</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Install via bower</p>
+
+<div class="highlight highlight-source-shell"><pre>bower install backtotop.js</pre></div>
+
+<p>Install via npm</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install backtotop.js</pre></div>
+
+<p>Add javascript and html code</p>
+
+<div class="highlight highlight-text-html-basic"><pre>    &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#0<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>backtotop<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>cd-top<span class="pl-pds">"</span></span>&gt;Top&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#backtotop<span class="pl-pds">'</span></span>).<span class="pl-en">backtotop</span>({
+        offset<span class="pl-k">:</span> <span class="pl-c1">300</span>,
+        offsetopacity<span class="pl-k">:</span> <span class="pl-c1">1200</span>,
+        scrollduration<span class="pl-k">:</span> <span class="pl-c1">1900</span>
+    }); </pre></div>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>Have a look at the <a href="http://tushariscoolster.github.io/backtotop.js">DEMO</a></p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offset</td>
+<td><code>off of scroll</code></td>
+</tr>
+<tr>
+<td>offsetopacity</td>
+<td><code>Opacity of the scrool button</code></td>
+</tr>
+<tr>
+<td>scrollduration</td>
+<td><code>Duration of scroll</code></td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Open an issue first to discuss potential changes/additions. If you have questions with the guide, feel free to leave them as issues in the repository. If you find a typo, create a pull request. The idea is to keep the content up to date and use github’s native feature to help tell the story with issues and PR’s, which are all searchable via google. Why? Because odds are if you have a question, someone else does too! You can learn more here at about how to contribute.</p>
+
+<p><em>By contributing to this repository you are agreeing to make your content available subject to the license of this repository.</em></p>
+
+<h3>
+<a id="process" class="anchor" href="#process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Process</h3>
+
+<pre><code>1. Discuss the changes in a GitHub issue.
+2. Open a Pull Request, reference the issue, and explain the change and why it adds value.
+3. The Pull Request will be evaluated and either merged or declined.
+</code></pre>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Use this guide. Attributions are appreciated._</p>
+
+<h3>
+<a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright</h3>
+
+<p>Copyright (c) 2014-2015 <a href="http://www.tusharborole.com">Tushar Borole</a></p>
+
+<h3>
+<a id="the-mit-license" class="anchor" href="#the-mit-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>(The MIT License)</h3>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<h2>
+<a id="last-but-not-least" class="anchor" href="#last-but-not-least" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Last but not least</h2>
+
+<p>This is made in India with love and passion  ʕ´•ᴥ•`ʔ</p>
+
+<p><a href="../../"><img src="http://lonamowers-hrd.appspot.com/images/made_india.jpg" height="200"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/tushariscoolster/backtotop.js/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/tushariscoolster/backtotop.js/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/tushariscoolster/backtotop.js"></a> is maintained by <a href="https://github.com/tushariscoolster">tushariscoolster</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
