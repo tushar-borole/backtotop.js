@@ -1,0 +1,23 @@
+{
+  "name": "backtotop.js",
+  "description": "backtotop.js",
+  "version": "0.0.0",
+  "authors": [
+    "Tushar Borole <tushariscoolster@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tushariscoolster/backtotop.js"
+  },
+  "homepage": "http://tushariscoolster.github.io/backtotop.js/",
+  "license": "LGPL-2.1",
+  "main": "backtotop.js",
+  "keywords": ["backtotop.js"
+  ],
+  "ignore": [
+    "gh-pages",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {}
+}
